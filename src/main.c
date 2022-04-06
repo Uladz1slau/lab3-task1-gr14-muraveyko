@@ -8,21 +8,34 @@ int countOne(int);
 int main(int argc, const char * argv[]) {
     int dec2bin(int a);
     srand(time(NULL));
-
     int amount;//кол-во чисел в массиве
+    printf("Введите кол-во чисел в массиве: \n");
     scanf("%d", &amount);
     int numbers[amount]; //массив
-   // int num; // числа в массиве
     int i;
-  
-   
     
-    for (i=0; i< amount; i++) {
-       // numbers[i] = rand()%100;
-       numbers[i] = countOne(dec2bin(rand()%100));
+    printf("Вывод массива: \n");
+    
+    for (i=0; i < amount; i++) {
+        numbers[i] = (rand()%100);
         printf("numbers[%d] = %d\n", i, numbers[i]);
         
         }
+    printf("Вывод двоичной записи чисел: \n");
+    
+    for (i=0; i < amount; i++) {
+  
+        printf("numbers[%d] = %d\n", i, dec2bin(numbers[i]));
+        
+        }
+    printf("Вывод колличества единиц в двоичной записе чисел: \n");
+    
+    for (i=0; i < amount; i++) {
+        numbers[i] = countOne(numbers[i]);
+        printf("numbers[%d] = %d\n", i, numbers[i]);
+        
+        }
+    printf("Вывод отсортированного массива: \n");
     
     for (int i=0; (i < (amount-1)); i++)
     {
